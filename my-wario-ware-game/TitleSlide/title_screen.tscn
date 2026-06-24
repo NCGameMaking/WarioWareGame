@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://bjv8ukcdk0boe"]
+
+[ext_resource type="Texture2D" uid="uid://fyhlb3rqb36v" path="res://TitleSlide/TitleTextures/MarioTitleCharacter.png" id="1_qxw36"]
+[ext_resource type="Texture2D" uid="uid://dqi7cithv6kbc" path="res://TitleSlide/TitleTextures/TitleBG.jpg" id="2_h2i5r"]
+[ext_resource type="Texture2D" uid="uid://cw6nui7hh7ukg" path="res://TitleSlide/TitleTextures/WarioTitleBG.jpg" id="3_rygmq"]
+[ext_resource type="Texture2D" uid="uid://dyhc2lju025wv" path="res://TitleSlide/TitleTextures/WarioTitleCharacter.png" id="4_rygmq"]
+[ext_resource type="FontFile" uid="uid://dri86hr1ixh6o" path="res://Font/SuperMario256.ttf" id="5_mty85"]
+[ext_resource type="AudioStream" uid="uid://bu2v8w8gtn4b2" path="res://SFX/its-me-mario.mp3" id="6_mty85"]
+
+[sub_resource type="Animation" id="Animation_mty85"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarioCanvas:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WarioCanvas:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_0grcf"]
+resource_name = "Takeover"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarioCanvas:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WarioCanvas:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mario")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 2.2599995,
+"start_offset": 0.16,
+"stream": ExtResource("6_mty85")
+}],
+"times": PackedFloat32Array(0.16)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnkeq"]
+_data = {
+&"RESET": SubResource("Animation_mty85"),
+&"Takeover": SubResource("Animation_0grcf")
+}
+
+[node name="TitleScreen" type="Control" unique_id=202035871]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarioCanvas" type="Control" parent="." unique_id=983610986]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarioTitleBG" type="TextureRect" parent="MarioCanvas" unique_id=212877968]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_h2i5r")
+flip_h = true
+
+[node name="MarioTitleCharacter" type="TextureRect" parent="MarioCanvas" unique_id=133860220]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 313.0
+offset_right = 825.0
+offset_bottom = 642.0
+texture = ExtResource("1_qxw36")
+
+[node name="SuperMarioTitle" type="RichTextLabel" parent="MarioCanvas" unique_id=1017207040]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 147.0
+offset_right = 693.0
+offset_bottom = 510.885
+rotation = -0.071014315
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
+theme_override_constants/shadow_outline_size = 40
+theme_override_constants/shadow_offset_x = -11
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("5_mty85")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "
+[wave amp=35.0 freq=5.0 speed=10.0][color=#2A75FF]U[/color][color=#FFD42A]P[/color][color=#2AFF40]E[/color][color=#FF2A2A]R[/color] [color=#FFD42A]M[/color][color=#2A75FF]A[/color][color=#FF2A2A]R[/color][color=#2AFF40]I[/color][color=#FFD42A]O[/color]
+[/wave]"
+
+[node name="SuperMarioTitleS" type="RichTextLabel" parent="MarioCanvas" unique_id=1324996873]
+layout_mode = 0
+offset_left = 27.000002
+offset_top = 147.0
+offset_right = 632.0
+offset_bottom = 510.885
+rotation = -0.071014315
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
+theme_override_constants/shadow_outline_size = 40
+theme_override_constants/shadow_offset_x = -11
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("5_mty85")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "
+[wave amp=35.0 freq=5.0 speed=10.0][color=#FF2A2A]S[/color]
+[/wave]"
+
+[node name="WarioCanvas" type="Control" parent="." unique_id=1306765000]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WarioTitleBG" type="TextureRect" parent="WarioCanvas" unique_id=191004844]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("3_rygmq")
+flip_h = true
+
+[node name="WarioTitleCharacter" type="TextureRect" parent="WarioCanvas" unique_id=1578555456]
+modulate = Color(0.83632696, 0.83632696, 0.83632696, 1)
+texture_filter = 2
+layout_mode = 0
+offset_left = 559.00006
+offset_top = 308.00003
+offset_right = 777.00006
+offset_bottom = 539.0
+scale = Vector2(1.4174312, 1.4174312)
+texture = ExtResource("4_rygmq")
+
+[node name="WarioWareTitle" type="RichTextLabel" parent="WarioCanvas" unique_id=381340267]
+clip_contents = false
+layout_mode = 0
+offset_left = 137.0
+offset_top = 216.0
+offset_right = 687.0
+offset_bottom = 302.22
+rotation = -0.06314333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.08342498, 0.011374128, 0.0091761155, 1)
+theme_override_constants/shadow_outline_size = 40
+theme_override_constants/shadow_offset_x = -11
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("5_mty85")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[shake amp=70.0 freq=5.0 speed=10.0][color=#9D4EDD]A[/color][color=#FFEA00]R[/color][color=#E63946]I[/color][color=#9D4EDD]O[/color][color=#FFEA00]W[/color][color=#E63946]A[/color][color=#9D4EDD]R[/color][color=#FFEA00]E[/color]
+[/shake]"
+
+[node name="WarioWareTitleW" type="RichTextLabel" parent="WarioCanvas" unique_id=1425100580]
+clip_contents = false
+layout_mode = 0
+offset_left = 54.0
+offset_top = 221.0
+offset_right = 604.0
+offset_bottom = 307.22
+rotation = -0.06314333
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.08342498, 0.011374128, 0.0091761155, 1)
+theme_override_constants/shadow_outline_size = 40
+theme_override_constants/shadow_offset_x = -11
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 30
+theme_override_fonts/normal_font = ExtResource("5_mty85")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "[shake amp=70.0 freq=5.0 speed=10.0][color=#FFEA00]W[/color]
+[/shake]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1303553609]
+libraries/ = SubResource("AnimationLibrary_qnkeq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=383971736]
+visible = false
+layout_mode = 0
+offset_left = 141.0
+offset_top = 374.0
+offset_right = 441.0
+offset_bottom = 424.0
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1101978333]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "Play"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2009395087]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "Settings"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=86694083]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+text = "Quit"
+
+[node name="Mario" type="AudioStreamPlayer" parent="." unique_id=1056245030]
