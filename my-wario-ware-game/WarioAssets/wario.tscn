@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bcyotmmh5mnp2"]
 
+[ext_resource type="Script" uid="uid://c8nenb8q7m7ph" path="res://WarioAssets/wario.gd" id="1_artot"]
 [ext_resource type="Texture2D" uid="uid://b5kjjf8p615sf" path="res://WarioAssets/WarioClimb.png" id="1_fjfdh"]
 [ext_resource type="Texture2D" uid="uid://bg4t2lg732hlo" path="res://WarioAssets/WarioIdle.png" id="1_i88ip"]
 [ext_resource type="Texture2D" uid="uid://cu3uh240klex3" path="res://WarioAssets/WarioJump.png" id="1_yntom"]
@@ -243,7 +244,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 2.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -334,12 +335,20 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_og4qw"]
+radius = 14.0
+height = 34.0
+
 [node name="Wario" type="CharacterBody2D" unique_id=1503781614]
+script = ExtResource("1_artot")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=386550074]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_diyld")
-animation = &"climb"
-frame_progress = 0.82044595
+animation = &"Jump"
+frame_progress = 0.91777456
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041340624]
+shape = SubResource("CapsuleShape2D_og4qw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=189312685]
