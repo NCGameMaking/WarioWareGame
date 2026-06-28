@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cu3uh240klex3" path="res://WarioAssets/WarioJump.png" id="1_yntom"]
 [ext_resource type="Texture2D" uid="uid://don7s44mdyh36" path="res://WarioAssets/WarioRun.png" id="2_16hjx"]
 [ext_resource type="Texture2D" uid="uid://caddi4issb8kx" path="res://WarioAssets/WarioFall.png" id="3_artot"]
+[ext_resource type="Texture2D" uid="uid://cwn44gllwn3ty" path="res://WarioAssets/WarioDeath.png" id="4_1rdum"]
 [ext_resource type="Texture2D" uid="uid://bnvw0ois8b1l3" path="res://WarioAssets/WarioSkipping.png" id="4_37wx1"]
+[ext_resource type="Texture2D" uid="uid://c6ie5y3vuqfpx" path="res://WarioAssets/gorlic.png" id="8_og4qw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrfv1"]
 atlas = ExtResource("1_yntom")
@@ -43,6 +45,10 @@ region = Rect2(156, 0, 26, 31)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jl3do"]
 atlas = ExtResource("1_fjfdh")
 region = Rect2(182, 0, 26, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq3k5"]
+atlas = ExtResource("4_1rdum")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwi04"]
 atlas = ExtResource("3_artot")
@@ -217,6 +223,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qq3k5")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xwi04")
 }],
 "loop": true,
@@ -339,16 +353,95 @@ animations = [{
 radius = 14.0
 height = 34.0
 
-[node name="Wario" type="CharacterBody2D" unique_id=1503781614]
+[sub_resource type="Animation" id="Animation_og4qw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1rdum"]
+resource_name = "hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.28333333, 0.35, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_if1pv"]
+_data = {
+&"RESET": SubResource("Animation_og4qw"),
+&"hurt": SubResource("Animation_1rdum")
+}
+
+[node name="Wario" type="CharacterBody2D" unique_id=1503781614 groups=["Player"]]
+scale = Vector2(0.8, 0.8)
 script = ExtResource("1_artot")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=386550074]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_diyld")
-animation = &"Jump"
-frame_progress = 0.91777456
+animation = &"death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2041340624]
 shape = SubResource("CapsuleShape2D_og4qw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=189312685]
+zoom = Vector2(3, 3)
+
+[node name="Control" type="Control" parent="." unique_id=350026249]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1942820707]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Garlic1" type="TextureRect" parent="Control" unique_id=1710556825]
+layout_mode = 0
+offset_left = 146.25
+offset_top = -135.0
+offset_right = 3846.9922
+offset_bottom = 3239.9998
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("8_og4qw")
+
+[node name="Garlic2" type="TextureRect" parent="Control" unique_id=1996346694]
+layout_mode = 0
+offset_left = 173.75002
+offset_top = -134.99997
+offset_right = 3874.4922
+offset_bottom = 3239.9998
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("8_og4qw")
+
+[node name="Garlic3" type="TextureRect" parent="Control" unique_id=302963612]
+layout_mode = 0
+offset_left = 202.50002
+offset_top = -135.0
+offset_right = 3903.2422
+offset_bottom = 3239.9998
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("8_og4qw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1482376608]
+libraries/ = SubResource("AnimationLibrary_if1pv")
