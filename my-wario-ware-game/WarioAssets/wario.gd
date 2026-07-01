@@ -123,7 +123,7 @@ func take_damage(amount : int):
 		garlic_1.visible = false
 		garlic_2.visible = false
 		garlic_3.visible = false
-		
+
 
 func game_over():
 	if is_dead:
@@ -144,8 +144,6 @@ func game_over():
 	await get_tree().create_timer(0.5).timeout
 
 	$"../LoseSFX".play()
-
-
 
 func increase_score(amount: int):
 	player_stats.coin_count += 1

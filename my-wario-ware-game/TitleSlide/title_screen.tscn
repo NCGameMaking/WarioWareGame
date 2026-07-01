@@ -18,12 +18,25 @@
 [ext_resource type="AudioStream" uid="uid://cpcdenep0xm5b" path="res://SFX/TitleSFX/mario-mamma-mia.mp3" id="14_vqmch"]
 [ext_resource type="AudioStream" uid="uid://bqn7p4jjssrsj" path="res://SFX/TitleSFX/ThumpandGrunt.mp3" id="16_3cg5l"]
 [ext_resource type="AudioStream" uid="uid://tcamc3avrmky" path="res://SFX/TitleSFX/thumpEnd.mp3" id="17_u6iq6"]
+[ext_resource type="Script" uid="uid://cftjvfskdlmn2" path="res://TitleSlide/shake_camera_2d.gd" id="19_t0mki"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qnkeq"]
 radius = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0grcf"]
 height = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn65a"]
+bg_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+shadow_color = Color(0, 0, 0, 0.827451)
+shadow_size = 5
+shadow_offset = Vector2(-2.46, 3)
 
 [sub_resource type="Animation" id="Animation_mty85"]
 length = 0.001
@@ -294,7 +307,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("PlayButton:position")
+tracks/22/path = NodePath("MarioCanvas/PlayButton:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -306,7 +319,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("MenuButton:position")
+tracks/23/path = NodePath("MarioCanvas/MenuButton:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -318,7 +331,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("QuitButton:position")
+tracks/24/path = NodePath("MarioCanvas/QuitButton:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -646,7 +659,7 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("PlayButton:position")
+tracks/22/path = NodePath("MarioCanvas/PlayButton:position")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
@@ -658,7 +671,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("MenuButton:position")
+tracks/23/path = NodePath("MarioCanvas/MenuButton:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -670,7 +683,7 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("QuitButton:position")
+tracks/24/path = NodePath("MarioCanvas/QuitButton:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
@@ -881,18 +894,6 @@ _data = {
 &"Takeover": SubResource("Animation_0grcf")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn65a"]
-bg_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_detail = 1
-shadow_color = Color(0, 0, 0, 0.827451)
-shadow_size = 5
-shadow_offset = Vector2(-2.46, 3)
-
 [node name="TitleScreen" type="Control" unique_id=202035871]
 layout_mode = 3
 anchors_preset = 0
@@ -965,7 +966,7 @@ layout_mode = 0
 offset_left = 152.0
 offset_top = 147.0
 offset_right = 757.0
-offset_bottom = 510.8855
+offset_bottom = 510.88544
 rotation = -0.071014315
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
@@ -986,7 +987,7 @@ layout_mode = 0
 offset_left = 88.0
 offset_top = 147.0
 offset_right = 155.68407
-offset_bottom = 308.55524
+offset_bottom = 308.55518
 rotation = -0.071014315
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
@@ -1008,7 +1009,7 @@ layout_mode = 0
 offset_left = 27.000002
 offset_top = 147.0
 offset_right = 95.57539
-offset_bottom = 318.0012
+offset_bottom = 318.00125
 rotation = -0.071014315
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
@@ -1060,7 +1061,7 @@ layout_mode = 0
 offset_left = 136.0
 offset_top = 219.00002
 offset_right = 686.0
-offset_bottom = 305.2199
+offset_bottom = 305.21985
 rotation = -0.06314333
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.08342498, 0.011374128, 0.0091761155, 1)
@@ -1096,13 +1097,7 @@ position = Vector2(613, 216.99998)
 scale = Vector2(63.500015, 63.500015)
 mesh = SubResource("CapsuleMesh_0grcf")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1303553609]
-libraries/ = SubResource("AnimationLibrary_qnkeq")
-autoplay = &"Takeover"
-
-[node name="Mario" type="AudioStreamPlayer" parent="." unique_id=1056245030]
-
-[node name="PlayButton" type="Button" parent="." unique_id=2077835354]
+[node name="PlayButton" type="Button" parent="MarioCanvas" unique_id=2077835354]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 0
 offset_left = 214.0
@@ -1116,7 +1111,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mn65a")
 text = "PLAY"
 
-[node name="MenuButton" type="Button" parent="." unique_id=997834409]
+[node name="MenuButton" type="Button" parent="MarioCanvas" unique_id=997834409]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 0
 offset_left = 214.0
@@ -1130,7 +1125,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mn65a")
 text = "MENU"
 
-[node name="QuitButton" type="Button" parent="." unique_id=96866803]
+[node name="QuitButton" type="Button" parent="MarioCanvas" unique_id=96866803]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 0
 offset_left = 214.0
@@ -1143,6 +1138,12 @@ theme_override_fonts/font = ExtResource("8_qnkeq")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mn65a")
 text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1303553609]
+libraries/ = SubResource("AnimationLibrary_qnkeq")
+autoplay = &"Takeover"
+
+[node name="Mario" type="AudioStreamPlayer" parent="." unique_id=1056245030]
 
 [node name="Label" type="Label" parent="." unique_id=961241665]
 layout_mode = 0
@@ -1168,6 +1169,10 @@ text = "Wario & Mario are product of Nintendo"
 
 [node name="ThumpEnd" type="AudioStreamPlayer" parent="." unique_id=507512107]
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MenuButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="ShakeCamera2D" type="Camera2D" parent="." unique_id=740930613]
+position = Vector2(576, 324)
+script = ExtResource("19_t0mki")
+
+[connection signal="pressed" from="MarioCanvas/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarioCanvas/MenuButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MarioCanvas/QuitButton" to="." method="_on_quit_button_pressed"]
