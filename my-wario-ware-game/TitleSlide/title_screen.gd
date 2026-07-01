@@ -7,7 +7,7 @@ func _on_play_button_pressed():
 
 
 func _on_settings_button_pressed():
-	print("Settings to be added")
+	get_tree().change_scene_to_file("res://minigame_menu.tscn")
 
 
 func _on_quit_button_pressed():

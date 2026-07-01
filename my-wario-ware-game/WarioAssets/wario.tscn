@@ -8,7 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://caddi4issb8kx" path="res://WarioAssets/WarioFall.png" id="3_artot"]
 [ext_resource type="Texture2D" uid="uid://cwn44gllwn3ty" path="res://WarioAssets/WarioDeath.png" id="4_1rdum"]
 [ext_resource type="Texture2D" uid="uid://bnvw0ois8b1l3" path="res://WarioAssets/WarioSkipping.png" id="4_37wx1"]
-[ext_resource type="Texture2D" uid="uid://c6ie5y3vuqfpx" path="res://WarioAssets/gorlic.png" id="8_og4qw"]
+[ext_resource type="AudioStream" uid="uid://c4rvqjd740w70" path="res://SFX/WarioDeathAnim.mp3" id="9_1rdum"]
+[ext_resource type="AudioStream" uid="uid://2aixdcm1l0al" path="res://SFX/CollectCoin.mp3" id="9_if1pv"]
+[ext_resource type="AudioStream" uid="uid://dbt1ugslobm1v" path="res://SFX/WarioJump.mp3" id="11_sxbmh"]
+[ext_resource type="AudioStream" uid="uid://ct8x4je2kjpq8" path="res://SFX/WarioHurt.mp3" id="12_56wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrfv1"]
 atlas = ExtResource("1_yntom")
@@ -368,6 +371,25 @@ tracks/0/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_sxbmh"]
+resource_name = "collectcoin"
+length = 0.7
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollectCoin")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 11.1,
+"start_offset": 0.25,
+"stream": ExtResource("9_if1pv")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
 [sub_resource type="Animation" id="Animation_1rdum"]
 resource_name = "hurt"
 length = 0.5
@@ -387,6 +409,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_if1pv"]
 _data = {
 &"RESET": SubResource("Animation_og4qw"),
+&"collectcoin": SubResource("Animation_sxbmh"),
 &"hurt": SubResource("Animation_1rdum")
 }
 
@@ -405,43 +428,17 @@ shape = SubResource("CapsuleShape2D_og4qw")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=189312685]
 zoom = Vector2(3, 3)
 
-[node name="Control" type="Control" parent="." unique_id=350026249]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=1942820707]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Garlic1" type="TextureRect" parent="Control" unique_id=1710556825]
-layout_mode = 0
-offset_left = 146.25
-offset_top = -135.0
-offset_right = 3846.9922
-offset_bottom = 3239.9998
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("8_og4qw")
-
-[node name="Garlic2" type="TextureRect" parent="Control" unique_id=1996346694]
-layout_mode = 0
-offset_left = 173.75002
-offset_top = -134.99997
-offset_right = 3874.4922
-offset_bottom = 3239.9998
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("8_og4qw")
-
-[node name="Garlic3" type="TextureRect" parent="Control" unique_id=302963612]
-layout_mode = 0
-offset_left = 202.50002
-offset_top = -135.0
-offset_right = 3903.2422
-offset_bottom = 3239.9998
-scale = Vector2(0.01, 0.01)
-texture = ExtResource("8_og4qw")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1482376608]
 libraries/ = SubResource("AnimationLibrary_if1pv")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1869168505]
+stream = ExtResource("9_1rdum")
+
+[node name="CollectCoin" type="AudioStreamPlayer" parent="." unique_id=468945587]
+
+[node name="WarioJump" type="AudioStreamPlayer" parent="." unique_id=144486760]
+stream = ExtResource("11_sxbmh")
+
+[node name="WarioHurt" type="AudioStreamPlayer" parent="." unique_id=294736291]
+stream = ExtResource("12_56wgy")
+volume_db = 10.0

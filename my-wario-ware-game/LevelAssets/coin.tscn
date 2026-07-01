@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cvheyq2c331je"]
+
+[ext_resource type="Script" uid="uid://67gdk58pkg0u" path="res://Levels/coin_collect.gd" id="1_gm5u8"]
+[ext_resource type="Texture2D" uid="uid://dnamwmrmg4nxm" path="res://LevelAssets/tileset-cave.png" id="2_8kdkh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yffdg"]
+atlas = ExtResource("2_8kdkh")
+region = Rect2(80, 320, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ush4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yffdg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tvgo"]
+radius = 3.0
+height = 10.0
+
+[node name="CoinCollect" type="Area2D" unique_id=573701308]
+script = ExtResource("1_gm5u8")
+
+[node name="CoinSprite" type="AnimatedSprite2D" parent="." unique_id=1791872248]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ush4o")
+frame_progress = 0.48043188
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1003203377]
+position = Vector2(0, 2.545)
+shape = SubResource("CapsuleShape2D_6tvgo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

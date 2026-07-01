@@ -8,9 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://dyhc2lju025wv" path="res://TitleSlide/TitleTextures/WarioTitleCharacter.png" id="4_rygmq"]
 [ext_resource type="FontFile" uid="uid://dri86hr1ixh6o" path="res://Font/SuperMario256.ttf" id="5_mty85"]
 [ext_resource type="Texture2D" uid="uid://ylven2pfy5vy" path="res://TitleSlide/TitleTextures/BombOmbTitleScreen.webp" id="6_mty85"]
-[ext_resource type="AudioStream" uid="uid://bu2v8w8gtn4b2" path="res://SFX/its-me-mario.mp3" id="8_qfvwn"]
+[ext_resource type="AudioStream" uid="uid://bu2v8w8gtn4b2" path="res://SFX/TitleSFX/its-me-mario.mp3" id="8_qfvwn"]
 [ext_resource type="FontFile" uid="uid://day7gaw63srui" path="res://Font/Wariowareinc-BWWdn.ttf" id="8_qnkeq"]
-[ext_resource type="AudioStream" uid="uid://dk3ijlrn02bvn" path="res://SFX/ImWario.mp3" id="9_sglef"]
+[ext_resource type="AudioStream" uid="uid://dk3ijlrn02bvn" path="res://SFX/TitleSFX/ImWario.mp3" id="9_sglef"]
+[ext_resource type="AudioStream" uid="uid://rxoslofemjxs" path="res://SFX/TitleSFX/bang.mp3" id="10_jjggv"]
+[ext_resource type="AudioStream" uid="uid://cwm1pq0sqtt3s" path="res://SFX/TitleSFX/loudbang&echo.mp3" id="11_t0mki"]
+[ext_resource type="AudioStream" uid="uid://ce5fhqb3gdtr2" path="res://SFX/TitleSFX/BombFizzing.mp3" id="12_p4tfk"]
+[ext_resource type="AudioStream" uid="uid://dl4py1c0ywep" path="res://SFX/TitleSFX/bombExplosion.mp3" id="13_b15l5"]
+[ext_resource type="AudioStream" uid="uid://cpcdenep0xm5b" path="res://SFX/TitleSFX/mario-mamma-mia.mp3" id="14_vqmch"]
+[ext_resource type="AudioStream" uid="uid://bqn7p4jjssrsj" path="res://SFX/TitleSFX/ThumpandGrunt.mp3" id="16_3cg5l"]
+[ext_resource type="AudioStream" uid="uid://tcamc3avrmky" path="res://SFX/TitleSFX/thumpEnd.mp3" id="17_u6iq6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qnkeq"]
 radius = 1.0
@@ -299,7 +306,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("SettingsButton:position")
+tracks/23/path = NodePath("MenuButton:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -368,22 +375,10 @@ tracks/28/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("Mario:stream")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_qfvwn")]
-}
 
 [sub_resource type="Animation" id="Animation_0grcf"]
 resource_name = "Takeover"
-length = 16.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -523,7 +518,7 @@ tracks/11/path = NodePath("MarioCanvas/BombOmb:modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 7.90366, 8.298842),
+"times": PackedFloat32Array(0, 7.9, 8.298842),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 0, 0, 1)]
@@ -663,7 +658,7 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("SettingsButton:position")
+tracks/23/path = NodePath("MenuButton:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
@@ -739,22 +734,146 @@ tracks/29/path = NodePath("Mario")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
-"clips": [],
-"times": PackedFloat32Array()
+"clips": [{
+"end_offset": 2.1499996,
+"start_offset": 0.0,
+"stream": ExtResource("8_qfvwn")
+}],
+"times": PackedFloat32Array(0.6666667)
 }
 tracks/29/use_blend = true
-tracks/30/type = "value"
+tracks/30/type = "audio"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Mario:stream")
+tracks/30/path = NodePath("1stBang")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("8_qfvwn")]
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_jjggv")
+}],
+"times": PackedFloat32Array(2.6667)
 }
+tracks/30/use_blend = true
+tracks/31/type = "audio"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("2ndBang")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_t0mki")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("11_t0mki")
+}],
+"times": PackedFloat32Array(4.2, 5.5)
+}
+tracks/31/use_blend = true
+tracks/32/type = "audio"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("BombFizzing")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.69999987,
+"stream": ExtResource("12_p4tfk")
+}],
+"times": PackedFloat32Array(7.9)
+}
+tracks/32/use_blend = true
+tracks/33/type = "audio"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("BombExploding")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_b15l5")
+}],
+"times": PackedFloat32Array(8.833333)
+}
+tracks/33/use_blend = true
+tracks/34/type = "audio"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("MarioMamaMia")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_vqmch")
+}],
+"times": PackedFloat32Array(11.666667)
+}
+tracks/34/use_blend = true
+tracks/35/type = "audio"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Wario")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_sglef")
+}],
+"times": PackedFloat32Array(12.966666)
+}
+tracks/35/use_blend = true
+tracks/36/type = "audio"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Thump&Wump")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("16_3cg5l")
+}],
+"times": PackedFloat32Array(12.9)
+}
+tracks/36/use_blend = true
+tracks/37/type = "audio"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("ThumpEnd")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"clips": [{
+"end_offset": 0.66,
+"start_offset": 0.56,
+"stream": ExtResource("17_u6iq6")
+}, {
+"end_offset": 0.66,
+"start_offset": 0.56,
+"stream": ExtResource("17_u6iq6")
+}, {
+"end_offset": 0.66,
+"start_offset": 0.56,
+"stream": ExtResource("17_u6iq6")
+}],
+"times": PackedFloat32Array(14.6, 14.766666, 14.866667)
+}
+tracks/37/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qnkeq"]
 _data = {
@@ -846,7 +965,7 @@ layout_mode = 0
 offset_left = 152.0
 offset_top = 147.0
 offset_right = 757.0
-offset_bottom = 510.88617
+offset_bottom = 510.8855
 rotation = -0.071014315
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
@@ -867,7 +986,7 @@ layout_mode = 0
 offset_left = 88.0
 offset_top = 147.0
 offset_right = 155.68407
-offset_bottom = 308.5561
+offset_bottom = 308.55524
 rotation = -0.071014315
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
@@ -889,7 +1008,7 @@ layout_mode = 0
 offset_left = 27.000002
 offset_top = 147.0
 offset_right = 95.57539
-offset_bottom = 318.0005
+offset_bottom = 318.0012
 rotation = -0.071014315
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.28054044, 0.081870876, 0.07197633, 1)
@@ -941,7 +1060,7 @@ layout_mode = 0
 offset_left = 136.0
 offset_top = 219.00002
 offset_right = 686.0
-offset_bottom = 305.2201
+offset_bottom = 305.2199
 rotation = -0.06314333
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0.08342498, 0.011374128, 0.0091761155, 1)
@@ -982,10 +1101,6 @@ libraries/ = SubResource("AnimationLibrary_qnkeq")
 autoplay = &"Takeover"
 
 [node name="Mario" type="AudioStreamPlayer" parent="." unique_id=1056245030]
-stream = ExtResource("8_qfvwn")
-
-[node name="Wario" type="AudioStreamPlayer" parent="." unique_id=438290095]
-stream = ExtResource("9_sglef")
 
 [node name="PlayButton" type="Button" parent="." unique_id=2077835354]
 custom_minimum_size = Vector2(300, 40)
@@ -1001,7 +1116,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mn65a")
 text = "PLAY"
 
-[node name="SettingsButton" type="Button" parent="." unique_id=997834409]
+[node name="MenuButton" type="Button" parent="." unique_id=997834409]
 custom_minimum_size = Vector2(300, 40)
 layout_mode = 0
 offset_left = 214.0
@@ -1013,7 +1128,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_qnkeq")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mn65a")
-text = "SETTINGS"
+text = "MENU"
 
 [node name="QuitButton" type="Button" parent="." unique_id=96866803]
 custom_minimum_size = Vector2(300, 40)
@@ -1029,6 +1144,30 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_mn65a")
 text = "QUIT"
 
+[node name="Label" type="Label" parent="." unique_id=961241665]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 621.0
+offset_right = 132.0
+offset_bottom = 644.0
+text = "Wario & Mario are product of Nintendo"
+
+[node name="1stBang" type="AudioStreamPlayer" parent="." unique_id=766558446]
+
+[node name="2ndBang" type="AudioStreamPlayer" parent="." unique_id=1964188627]
+
+[node name="BombFizzing" type="AudioStreamPlayer" parent="." unique_id=325705642]
+
+[node name="BombExploding" type="AudioStreamPlayer" parent="." unique_id=1747204394]
+
+[node name="MarioMamaMia" type="AudioStreamPlayer" parent="." unique_id=909382981]
+
+[node name="Wario" type="AudioStreamPlayer" parent="." unique_id=742773491]
+
+[node name="Thump&Wump" type="AudioStreamPlayer" parent="." unique_id=1276281012]
+
+[node name="ThumpEnd" type="AudioStreamPlayer" parent="." unique_id=507512107]
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

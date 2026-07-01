@@ -15,6 +15,11 @@ run/main_scene="uid://bjv8ukcdk0boe"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+player_stats="*uid://b41duk1xnp8yj"
+save_manager="*uid://bwa6xfn3q6d30"
+
 [display]
 
 window/size/mode=2

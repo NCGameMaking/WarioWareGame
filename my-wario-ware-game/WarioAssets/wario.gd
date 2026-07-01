@@ -11,10 +11,16 @@ var climbing: bool = false
 const CLIMB_SPEED = 150.0
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var garlic_1 = $Control/Garlic1
-@onready var garlic_2 = $Control/Garlic2
-@onready var garlic_3 = $Control/Garlic3
+
+@onready var coin_label = $"../UI/CoinLabel"
+
+@onready var camera_2d = $Camera2D
+
+
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var garlic_1 = $"../UI/Control/Garlic1"
+@onready var garlic_2 = $"../UI/Control/Garlic2"
+@onready var garlic_3 = $"../UI/Control/Garlic3"
 
 var health = 3
 
@@ -59,6 +65,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		animated_sprite_2d.play("Jump")
+		$WarioJump.play()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -76,11 +83,9 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
 func _on_ladder_zone_body_entered(body):
 	if body.name == "Wario":
 		on_ladder = true
-
 
 func _on_ladder_zone_body_exited(body):
 	if body.name == "Wario":
@@ -90,7 +95,7 @@ func _on_ladder_zone_body_exited(body):
 
 func take_damage(amount : int):
 	health -= amount
-	
+	$WarioHurt.play()
 	await get_tree().create_timer(0.5).timeout
 	
 	$AnimationPlayer.play("hurt")
@@ -119,19 +124,32 @@ func take_damage(amount : int):
 		garlic_2.visible = false
 		garlic_3.visible = false
 		
-@onready var camera_2d = $Camera2D
 
 func game_over():
 	if is_dead:
 		return
-	
+	camera_2d.reparent(get_tree().current_scene)
+
 	is_dead = true
 	
 	animated_sprite_2d.play("death")
 	collision_shape_2d.queue_free()
 	velocity.y = -250.0
 	print("Wario just died")
-	camera_2d.reparent(get_tree().current_scene)
+	$DeathSound.play()
 	
-	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://TitleSlide/title_screen.tscn")
+	await get_tree().create_timer(1.2).timeout
+	
+	$"../AnimationPlayer".play("deathPullup")
+	await get_tree().create_timer(0.5).timeout
+
+	$"../LoseSFX".play()
+
+
+
+func increase_score(amount: int):
+	player_stats.coin_count += 1
+	$AnimationPlayer.play("collectcoin")
+	print("score increased by 1")
+	coin_label.text = "[color=#FFE20]x "+ str(player_stats.coin_count) +"[/color]"
+	

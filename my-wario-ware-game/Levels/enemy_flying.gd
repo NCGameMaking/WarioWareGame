@@ -31,9 +31,12 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if not body.is_in_group("Player"):
-		print("not playerr")
+		print("not player")
 	else:
 		print("hit player")
+		if body.health == 1:
+			$"../../UI/DeathMenu/Panel/YL/DeathMessage".text = "Wario got stung or bit by an enemy!"
 		body.take_damage(1)
 		animated_sprite_2d.play("attack")
 		await animated_sprite_2d.animation_finished
+		animated_sprite_2d.play("default")
