@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var game_timer = $"../Timer"
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
@@ -131,7 +132,7 @@ func game_over():
 	camera_2d.reparent(get_tree().current_scene)
 
 	is_dead = true
-	
+	game_timer.stop()
 	animated_sprite_2d.play("death")
 	collision_shape_2d.queue_free()
 	velocity.y = -250.0
