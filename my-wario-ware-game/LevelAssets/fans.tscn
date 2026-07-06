@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://di7ujeyfts4vl"]
+
+[ext_resource type="Script" uid="uid://bexktry3rw3uy" path="res://fans.gd" id="1_nbjie"]
+[ext_resource type="Texture2D" uid="uid://bpyecjp1tc17b" path="res://LevelAssets/IndustrialFanFRAME.png" id="2_wwkop"]
+[ext_resource type="Texture2D" uid="uid://t4seple48vpi" path="res://LevelAssets/IndustrialFanBLADE.png" id="3_24sg5"]
+[ext_resource type="Texture2D" uid="uid://c357qj5mk4cc1" path="res://LevelAssets/wind/W401-1.png" id="4_qv2ue"]
+[ext_resource type="Texture2D" uid="uid://dtvls32qxi8v3" path="res://LevelAssets/wind/W401-2.png" id="5_qs1lu"]
+[ext_resource type="Texture2D" uid="uid://o16144vm3vh4" path="res://LevelAssets/wind/W401-3.png" id="6_gmihh"]
+[ext_resource type="Texture2D" uid="uid://rjqpcgjehk8" path="res://LevelAssets/wind/W401-4.png" id="7_685de"]
+[ext_resource type="Texture2D" uid="uid://d0vdnnldxsbbk" path="res://LevelAssets/wind/W401-5.png" id="8_07qly"]
+[ext_resource type="Texture2D" uid="uid://dt666ifh2dfdd" path="res://LevelAssets/wind/W401-6.png" id="9_r3bwh"]
+[ext_resource type="Texture2D" uid="uid://fcda8y8h46e6" path="res://LevelAssets/wind/W401-7.png" id="10_6rvjg"]
+[ext_resource type="Texture2D" uid="uid://dcdcaqahkuy1g" path="res://LevelAssets/wind/W401-8.png" id="11_s8gja"]
+[ext_resource type="Texture2D" uid="uid://seqmt3d72mya" path="res://LevelAssets/wind/W401-9.png" id="12_hieq5"]
+[ext_resource type="Texture2D" uid="uid://bygorwx5b5fnv" path="res://LevelAssets/wind/W401-10.png" id="13_ytcmd"]
+[ext_resource type="Texture2D" uid="uid://cjp3464dsprtx" path="res://LevelAssets/wind/W401-11.png" id="14_6ppx3"]
+[ext_resource type="Texture2D" uid="uid://c6agcp0rbul46" path="res://LevelAssets/wind/W401-12.png" id="15_7y2c3"]
+[ext_resource type="Texture2D" uid="uid://unhx32gdtjft" path="res://LevelAssets/wind/W401-13.png" id="16_3ra70"]
+[ext_resource type="Texture2D" uid="uid://bxmtydjpa4mrl" path="res://LevelAssets/wind/W401-14.png" id="17_bbdpw"]
+[ext_resource type="Texture2D" uid="uid://cewaa6sqcnoca" path="res://LevelAssets/wind/W401-15.png" id="18_skvdr"]
+[ext_resource type="Texture2D" uid="uid://bs3kq8uam4ase" path="res://LevelAssets/wind/W401-16.png" id="19_wewup"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vi4kr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qv2ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qs1lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gmihh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_685de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_07qly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_r3bwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6rvjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_s8gja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hieq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ytcmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6ppx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7y2c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3ra70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bbdpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_skvdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_wewup")
+}],
+"loop": true,
+"name": &"windblowing",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbp8n"]
+size = Vector2(3023, 47)
+
+[node name="Fans" type="Node2D" unique_id=402056252]
+script = ExtResource("1_nbjie")
+
+[node name="IndustrialFanFrame" type="Sprite2D" parent="." unique_id=1776145659]
+position = Vector2(-208.00002, 4.0000076)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_wwkop")
+
+[node name="IndustrialFanBlade" type="Sprite2D" parent="." unique_id=1467178137]
+position = Vector2(-209.00002, 2.0000076)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_24sg5")
+
+[node name="Wind Particles" type="AnimatedSprite2D" parent="." unique_id=170584574]
+position = Vector2(-42, 11)
+scale = Vector2(0.13745704, 0.13745703)
+sprite_frames = SubResource("SpriteFrames_vi4kr")
+animation = &"windblowing"
+autoplay = "windblowing"
+frame_progress = 0.2369569
+
+[node name="Wind Particles2" type="AnimatedSprite2D" parent="." unique_id=1252471610]
+position = Vector2(56, -3)
+scale = Vector2(0.13745704, 0.13745703)
+sprite_frames = SubResource("SpriteFrames_vi4kr")
+animation = &"windblowing"
+autoplay = "windblowing"
+frame_progress = 0.5176462
+
+[node name="Wind Particles3" type="AnimatedSprite2D" parent="." unique_id=1637427897]
+position = Vector2(179, 13)
+scale = Vector2(0.13745704, 0.13745703)
+sprite_frames = SubResource("SpriteFrames_vi4kr")
+animation = &"windblowing"
+autoplay = "windblowing"
+frame_progress = 0.41999665
+
+[node name="Wind Particles4" type="AnimatedSprite2D" parent="." unique_id=1149353323]
+position = Vector2(299, -6)
+scale = Vector2(0.13745704, 0.13745703)
+sprite_frames = SubResource("SpriteFrames_vi4kr")
+animation = &"windblowing"
+autoplay = "windblowing"
+frame_progress = 0.9783955
+
+[node name="Wind Particles5" type="AnimatedSprite2D" parent="." unique_id=1073954625]
+position = Vector2(403, 15)
+scale = Vector2(0.13745704, 0.13745703)
+sprite_frames = SubResource("SpriteFrames_vi4kr")
+animation = &"windblowing"
+autoplay = "windblowing"
+frame_progress = 0.2607087
+
+[node name="Area2D" type="Area2D" parent="." unique_id=873574772]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=890857520]
+position = Vector2(1363.5, 6.5687256)
+shape = SubResource("RectangleShape2D_kbp8n")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

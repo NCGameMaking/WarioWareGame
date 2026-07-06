@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://butwfu1ahhtir"
-path="res://.godot/imported/beeEnemy.png-b966671c45e7b00f29e8323d6b8b25e1.ctex"
+uid="uid://bygorwx5b5fnv"
+path="res://.godot/imported/W401-10.png-25dfcf50e2adc27e131d31f6c07ff852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LevelAssets/beeEnemy.png"
-dest_files=["res://.godot/imported/beeEnemy.png-b966671c45e7b00f29e8323d6b8b25e1.ctex"]
+source_file="res://LevelAssets/wind/W401-10.png"
+dest_files=["res://.godot/imported/W401-10.png-25dfcf50e2adc27e131d31f6c07ff852.ctex"]
 
 [params]
 

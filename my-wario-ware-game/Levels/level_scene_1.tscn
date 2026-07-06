@@ -8,14 +8,14 @@
 [ext_resource type="FontFile" uid="uid://dri86hr1ixh6o" path="res://Font/SuperMario256.ttf" id="6_ylg3x"]
 [ext_resource type="Script" uid="uid://dh4cm01mjxh4g" path="res://Levels/enemy_flying.gd" id="7_n7bf6"]
 [ext_resource type="Texture2D" uid="uid://c6ie5y3vuqfpx" path="res://WarioAssets/gorlic.png" id="7_ogmgx"]
-[ext_resource type="Texture2D" uid="uid://butwfu1ahhtir" path="res://LevelAssets/beeEnemy.png" id="7_ylg3x"]
 [ext_resource type="FontFile" uid="uid://by8fsxj2rmy26" path="res://Font/Wariowareincv2-2OOBw.ttf" id="8_d05ea"]
 [ext_resource type="Script" uid="uid://cilwm4oofrejp" path="res://Levels/death_menu.gd" id="8_lj36r"]
-[ext_resource type="Texture2D" uid="uid://ckje6dlw26kdp" path="res://LevelAssets/groundEnemy.png" id="8_n7bf6"]
+[ext_resource type="Texture2D" uid="uid://ckje6dlw26kdp" path="res://Enemy Assets/groundEnemy.png" id="8_n7bf6"]
 [ext_resource type="FontFile" uid="uid://day7gaw63srui" path="res://Font/Wariowareinc-BWWdn.ttf" id="9_m7dtd"]
 [ext_resource type="Script" uid="uid://bcwqrmrdceyv4" path="res://Levels/acid_or_whatever.gd" id="10_6tvgo"]
 [ext_resource type="PackedScene" uid="uid://cvheyq2c331je" path="res://LevelAssets/coin.tscn" id="10_lj36r"]
 [ext_resource type="Script" uid="uid://kjgdrutommyi" path="res://Levels/win_menu.gd" id="10_xmv2c"]
+[ext_resource type="Texture2D" uid="uid://deuhtkw7w8ulr" path="res://Enemy Assets/BatFrames.png" id="14_ush4o"]
 [ext_resource type="Script" uid="uid://dkkv51ym88md0" path="res://Levels/win_condition.gd" id="16_3gpqp"]
 [ext_resource type="AudioStream" uid="uid://dytqkvluik1qu" path="res://SFX/WinSound.mp3" id="18_3ecnx"]
 [ext_resource type="AudioStream" uid="uid://x5dxy1yuxmxb" path="res://SFX/wario-won.mp3" id="19_keqqo"]
@@ -2221,37 +2221,35 @@ size = Vector2(8, 111.44329)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tvgo"]
 size = Vector2(32, 141.0001)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ecnx"]
-atlas = ExtResource("7_ylg3x")
-region = Rect2(46, 0, 23, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d2ox"]
+atlas = ExtResource("14_ush4o")
+region = Rect2(168, 0, 24, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_keqqo"]
-atlas = ExtResource("7_ylg3x")
-region = Rect2(69, 0, 23, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3apa"]
+atlas = ExtResource("14_ush4o")
+region = Rect2(0, 0, 24, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_io7iq"]
-atlas = ExtResource("7_ylg3x")
-region = Rect2(92, 0, 23, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5nea"]
+atlas = ExtResource("14_ush4o")
+region = Rect2(24, 0, 24, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ogmgx"]
-atlas = ExtResource("7_ylg3x")
-region = Rect2(0, 0, 23, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_u76y6"]
+atlas = ExtResource("14_ush4o")
+region = Rect2(72, 0, 24, 30)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d05ea"]
-atlas = ExtResource("7_ylg3x")
-region = Rect2(23, 0, 23, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xe6m"]
+atlas = ExtResource("14_ush4o")
+region = Rect2(120, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ush4o"]
+atlas = ExtResource("14_ush4o")
+region = Rect2(96, 0, 24, 30)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6tvgo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ecnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_keqqo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_io7iq")
+"texture": SubResource("AtlasTexture_8d2ox")
 }],
 "loop": false,
 "name": &"attack",
@@ -2259,13 +2257,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ogmgx")
+"texture": SubResource("AtlasTexture_w3apa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d05ea")
+"texture": SubResource("AtlasTexture_u5nea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u76y6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xe6m")
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ush4o")
+}],
+"loop": true,
+"name": &"transistionstate",
 "speed": 5.0
 }]
 
@@ -3219,6 +3231,7 @@ move_speed = 80.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/EnemyFlying" unique_id=46615191]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6tvgo")
+animation = &"transistionstate"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyFlying" unique_id=1000251922]
@@ -3233,7 +3246,9 @@ move_speed = 80.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies/EnemyFlying2" unique_id=759160773]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_6tvgo")
+animation = &"attack"
 autoplay = "default"
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/EnemyFlying2" unique_id=1223126612]
 shape = SubResource("CircleShape2D_ylg3x")

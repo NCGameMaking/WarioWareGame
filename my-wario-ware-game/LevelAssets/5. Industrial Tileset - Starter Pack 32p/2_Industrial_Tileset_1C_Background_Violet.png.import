@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckje6dlw26kdp"
-path="res://.godot/imported/groundEnemy.png-02cceb65e05b66dfd9addd76b977507f.ctex"
+uid="uid://bwkxpl84pr2yj"
+path="res://.godot/imported/2_Industrial_Tileset_1C_Background_Violet.png-8d6fa7654bdf7312d14e383e7e84cc41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://LevelAssets/groundEnemy.png"
-dest_files=["res://.godot/imported/groundEnemy.png-02cceb65e05b66dfd9addd76b977507f.ctex"]
+source_file="res://LevelAssets/5. Industrial Tileset - Starter Pack 32p/2_Industrial_Tileset_1C_Background_Violet.png"
+dest_files=["res://.godot/imported/2_Industrial_Tileset_1C_Background_Violet.png-8d6fa7654bdf7312d14e383e7e84cc41.ctex"]
 
 [params]
 
