@@ -3,10 +3,10 @@ extends CharacterBody2D
 @export var float_speed : float = -100.0
 @export var thruster_force : float = 200.0
 @export var friction : float = 450.0
-
 @onready var sprite = $AnimatedSprite2D
 
 var environmental_wind : float = 0.0
+var just_popped = false
 
 func _physics_process(delta):
 	
@@ -26,6 +26,10 @@ func _physics_process(delta):
 			sprite.play("Float")
 		
 		velocity.x = move_toward(velocity.x, environmental_wind, friction * delta)
+	if $"../WarioPuffed".position.y >= 1060 and just_popped == true:
+		set_physics_process(true)
+		just_popped = false
+
 
 	move_and_slide()
 
