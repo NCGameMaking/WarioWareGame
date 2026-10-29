@@ -10,7 +10,6 @@ Minigame 2: Navigate through the factory while collecting coins and dodging obst
 
 # AI declaration
 The background images for the title screen were AI generated and the character were from Nintendo. pls i don't want copyright.
-I think like 2 devlogs in the beginning were made with the help of AI
 
 Hope you enjoy it!
 
