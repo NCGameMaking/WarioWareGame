@@ -27,3 +27,8 @@ func skip_intro():
 	#$AnimationPlayer.stop()
 		
 	print("Fast-forwarded straight to the end of the 16s intro!")
+
+
+func _on_button_skip_pressed():
+	skip_intro()
+	hide()

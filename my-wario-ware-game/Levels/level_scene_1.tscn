@@ -19,7 +19,6 @@
 [ext_resource type="Script" uid="uid://dkkv51ym88md0" path="res://Levels/win_condition.gd" id="16_3gpqp"]
 [ext_resource type="AudioStream" uid="uid://dytqkvluik1qu" path="res://SFX/WinSound.mp3" id="18_3ecnx"]
 [ext_resource type="AudioStream" uid="uid://x5dxy1yuxmxb" path="res://SFX/wario-won.mp3" id="19_keqqo"]
-[ext_resource type="AudioStream" uid="uid://coot2ditm6nkn" path="res://SFX/game-music-loop.mp3" id="20_io7iq"]
 [ext_resource type="AudioStream" uid="uid://l511hssujhxp" path="res://SFX/TimerTicking.mp3" id="21_yffdg"]
 [ext_resource type="AudioStream" uid="uid://sxlove71ob2m" path="res://SFX/LoseSFX.mp3" id="22_ush4o"]
 
@@ -3320,10 +3319,6 @@ stream = ExtResource("18_3ecnx")
 
 [node name="WarioWinSound" type="AudioStreamPlayer" parent="." unique_id=1484283725]
 stream = ExtResource("19_keqqo")
-
-[node name="GameBGLoop" type="AudioStreamPlayer" parent="." unique_id=1904654745]
-stream = ExtResource("20_io7iq")
-autoplay = true
 
 [node name="TimerTicking" type="AudioStreamPlayer" parent="." unique_id=14147429]
 stream = ExtResource("21_yffdg")

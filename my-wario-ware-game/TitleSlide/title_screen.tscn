@@ -1173,6 +1173,15 @@ text = "Wario & Mario are product of Nintendo"
 position = Vector2(576, 324)
 script = ExtResource("19_t0mki")
 
+[node name="ButtonSkip" type="Button" parent="." unique_id=346200234]
+layout_mode = 0
+offset_left = 1018.0
+offset_top = 607.0
+offset_right = 1144.0
+offset_bottom = 638.0
+text = "Skip Animation"
+
 [connection signal="pressed" from="MarioCanvas/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarioCanvas/MenuButton" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarioCanvas/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ButtonSkip" to="." method="_on_button_skip_pressed"]

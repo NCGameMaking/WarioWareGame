@@ -1,7 +1,7 @@
 extends Node
 
 const SAVE_PATH = "user://wario_high_scores.save"
-
+var bee_stings :int = 0
 var high_scores = {
 	"minigame1": 0,
 	"minigame2": 0,

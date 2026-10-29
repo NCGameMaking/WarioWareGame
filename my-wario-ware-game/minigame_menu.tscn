@@ -32,117 +32,93 @@ color = Color(1, 1, 0.13, 1)
 
 [node name="ButtonMinigame1" type="Button" parent="." unique_id=1579777764]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 111.0
-offset_right = 353.0
-offset_bottom = 205.0
+offset_left = 38.0
+offset_top = 113.0
+offset_right = 339.0
+offset_bottom = 207.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_vsqa4")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_7amdj")
 text = "Minigame 1"
 
-[node name="Label" type="Label" parent="ButtonMinigame1" unique_id=664136764]
+[node name="Label2" type="Label" parent="ButtonMinigame1" unique_id=1170048188]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 111.0
-offset_right = 222.0
-offset_bottom = 163.0
+offset_left = -6.0
+offset_top = 127.0
+offset_right = 429.0
+offset_bottom = 344.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_knuyd")
 theme_override_font_sizes/font_size = 40
-text = "High Score:"
+text = "Collect as many 
+coins as possible and
+ reach the treasure cave 
+before the timer runs out!"
+horizontal_alignment = 1
 
 [node name="ButtonMinigame2" type="Button" parent="." unique_id=788813233]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 111.0
-offset_right = 745.0
-offset_bottom = 205.0
+offset_left = 609.0
+offset_top = 118.0
+offset_right = 922.0
+offset_bottom = 212.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_vsqa4")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_7amdj")
 text = "Minigame 2"
 
-[node name="Label" type="Label" parent="ButtonMinigame2" unique_id=346530508]
+[node name="Label2" type="Label" parent="ButtonMinigame2" unique_id=1477013945]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 111.0
-offset_right = 222.0
-offset_bottom = 163.0
+offset_left = -36.0
+offset_top = 137.0
+offset_right = 507.0
+offset_bottom = 299.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_knuyd")
 theme_override_font_sizes/font_size = 40
-text = "High Score:"
+text = "Wario got stung by a bee! 
+Dodge the hazards as 
+you navigate through the factory"
+horizontal_alignment = 1
 
-[node name="ButtonMinigame3" type="Button" parent="." unique_id=1998168506]
+[node name="Label3" type="Label" parent="ButtonMinigame2" unique_id=1140967641]
 layout_mode = 0
-offset_left = 806.0
-offset_top = 111.0
-offset_right = 1114.0
-offset_bottom = 205.0
+offset_left = -50.0
+offset_top = 323.0
+offset_right = 493.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_knuyd")
+theme_override_font_sizes/font_size = 40
+text = "!! HARD !!"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ButtonMinigame2" unique_id=968472715]
+layout_mode = 0
+offset_left = -525.0
+offset_top = 356.0
+offset_right = 18.0
+offset_bottom = 518.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_knuyd")
+theme_override_font_sizes/font_size = 40
+text = "NORMAL"
+horizontal_alignment = 1
+
+[node name="ButtonMinigame3" type="Button" parent="." unique_id=916500294]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 550.0
+offset_right = 258.0
+offset_bottom = 629.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_vsqa4")
-theme_override_font_sizes/font_size = 60
+theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_7amdj")
-text = "Minigame 3"
-
-[node name="Label" type="Label" parent="ButtonMinigame3" unique_id=124239111]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 111.0
-offset_right = 222.0
-offset_bottom = 163.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_knuyd")
-theme_override_font_sizes/font_size = 40
-text = "High Score:"
-
-[node name="ButtonMinigame4" type="Button" parent="." unique_id=659105243]
-layout_mode = 0
-offset_left = 152.0
-offset_top = 468.0
-offset_right = 464.0
-offset_bottom = 562.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vsqa4")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_7amdj")
-text = "Minigame 4"
-
-[node name="Label" type="Label" parent="ButtonMinigame4" unique_id=122560771]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 111.0
-offset_right = 222.0
-offset_bottom = 163.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_knuyd")
-theme_override_font_sizes/font_size = 40
-text = "High Score:"
-
-[node name="ButtonMinigame5" type="Button" parent="." unique_id=157405285]
-layout_mode = 0
-offset_left = 672.0
-offset_top = 468.0
-offset_right = 981.0
-offset_bottom = 562.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_vsqa4")
-theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_7amdj")
-text = "Minigame 5"
-
-[node name="Label" type="Label" parent="ButtonMinigame5" unique_id=1362832252]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 111.0
-offset_right = 222.0
-offset_bottom = 163.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_knuyd")
-theme_override_font_sizes/font_size = 40
-text = "High Score:"
+text = "Main Menu"
 
 [connection signal="pressed" from="ButtonMinigame1" to="." method="_on_button_minigame_1_pressed"]
+[connection signal="pressed" from="ButtonMinigame2" to="." method="_on_button_minigame_2_pressed"]
+[connection signal="pressed" from="ButtonMinigame3" to="." method="_on_button_minigame_3_pressed"]

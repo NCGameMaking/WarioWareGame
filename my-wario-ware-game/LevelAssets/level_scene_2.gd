@@ -7,6 +7,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_bee_transformation_scene()
+	save_manager.bee_stings=1
 
 func start_bee_transformation_scene():
 	wario_puffed.set_physics_process(false)
